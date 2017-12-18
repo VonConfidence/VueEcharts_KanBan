@@ -1,0 +1,29 @@
+ [
+ {
+   "title": "活跃群组数",
+   "dateTitle": "昨日",
+   "data": "206",
+   "rate": "+60.94%",
+   "isRise": true
+ },
+ {
+   "title": "活跃群组平均成员数",
+   "dateTitle": "昨日",
+   "data": "34",
+   "rate": "-35.85%",
+   "isRise": false
+ },
+{
+   "title": "新增群组数",
+   "dateTitle": "昨日",
+   "data": "314",
+   "rate": "+23.10%",
+   "isRise": true
+ },
+ {
+   "title": "解散群组数",
+   "dateTitle": "昨日",
+   "data": "206",
+   "rate": "+60.94%",
+   "isRise": true
+ }]
