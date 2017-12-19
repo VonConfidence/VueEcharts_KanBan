@@ -138,7 +138,11 @@ const currentMsgMap = new Map(
     ['msg.distribute/type=discuz', '讨论组分发消息数'],
     ['msg.recive/type=discuz', '讨论组下行消息数'],
     ['mean.msg.recive/type=discuz', '讨论组人均下行消息数'],
-    ['msg.push/type=discuz', '讨论组 Push 消息数']
+    ['msg.push/type=discuz', '讨论组 Push 消息数'],
+
+    ['SingleChat', '单聊'],
+    ['GroupChat', '群聊'],
+    ['DicuzChat', '讨论组'],
 
   ]
 )

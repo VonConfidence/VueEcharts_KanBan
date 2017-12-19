@@ -9,18 +9,23 @@
       </ul>
     </nav>
     <div class="main">
-      <router-view></router-view>
+      <!-- <router-view></router-view> -->
+      <SingleChat :url="url"></SingleChat>
     </div>
   </div>
 </template>
 <script>
+import Config from '@/config/config'
+
 import SingleChat from '@/components/CurrentPages/SingleChat'
 import GroupChat from '@/components/CurrentPages/GroupChat'
 import DiscuzChat from '@/components/CurrentPages/DiscuzChat'
+
 export default {
   data() {
     return {
       tabValue: 'SingleChat', // 为0 表示 单聊  为1表示群聊, 为2表示讨论组
+      url: '/screen/22'
     }
   },
   watch: {
@@ -28,40 +33,35 @@ export default {
     '$route': 'routeChange'
   },
   methods: {
-    routeChange() {
-      var path = this.$route.path;
-      // console.log('%%%%%%%%%%%%%%%Router Path', path); //           /GroupChat
-      // 控制路由回退的时候  tabsValue得值 不知道是哪一个
-      this.tabValue = path.slice(1);
-    },
+    // routeChange() {
+    //   var path = this.$route.path;
+    //   // console.log('%%%%%%%%%%%%%%%Router Path', path); //           /GroupChat
+    //   // 控制路由回退的时候  tabsValue得值 不知道是哪一个
+    //   this.tabValue = path.slice(1);
+    // },
     clickChart(tabValue) {
       this.tabValue = tabValue;
 
-      var path = '';
+      // var path = '';
       var query = {}
       switch (tabValue) {
         case 'SingleChat':
-          path = 'SingleChat'
-          query = {
-            url: '/screen/22'
-          }
+          // path = 'SingleChat'
+          query.url = '/screen/22'
           break
         case 'GroupChat':
-          path = 'GroupChat'
-          query = {
-            url: '/screen/23'
-          }
+          // path = 'GroupChat'
+          query.url = '/screen/23'
           break;
         case 'DiscuzChat':
-          path = 'DiscuzChat'
-          query = {
-            url: '/screen/24'
-          }
+          // path = 'DiscuzChat'
+          query.url=  '/screen/24'
           break;
         default:
           break;
       } // end switch
-      this.$router.push({ path, query })
+      // this.$router.push({ path, query })
+      this.url = query.url;
     }
 
   },
@@ -75,7 +75,7 @@ export default {
 </script>
 <style>
 #nav-header {
-  min-height: 380px;
+  min-height: 300px;
 }
 
 .header-title {
@@ -86,9 +86,9 @@ export default {
 
 .nav-header {
   text-align: left;
-  margin: 30px 0;
-  height: 70px;
-  line-height: 70px;
+  margin: 20px 0 10px 0;
+  height: 60px;
+  line-height: 60px;
 
   border: 1px solid #999;
 }
@@ -102,7 +102,8 @@ ul.nav-list {
 
 .nav-list li.item {
   display: inline-block;
-  width: 140px;
+  width: 30%;
+  max-width: 150px;
   text-align: center;
   border-right: 1px solid #ccc;
 }
@@ -116,6 +117,22 @@ ul.nav-list {
   text-decoration: none;
 }
 
+.single-chat .chart-date-picker {
+  display: inline-block;
+  position: absolute;
+  /*right: 150px;*/
+  width: 200px;
+}
+
+.startTime,
+.endTime {
+  display: inline-block;
+}
+
+.item-container {
+  min-height: 300px;
+  text-align: left;
+}
 
 
 
@@ -137,6 +154,7 @@ ul.nav-list {
   border-bottom: 3px solid rgb(49, 149, 236);
   color: rgb(49, 149, 236);
 }
+
 
 
 

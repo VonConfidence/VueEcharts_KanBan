@@ -1,10 +1,12 @@
 <template>
   <div class="singel-chat">
-    <data-item :data="item" v-for="(item,index) in cardItems" :key="item.title" :isActiveItem="index == activeItemIndex" @changeActiveItem="changeActiveItem" :index="index">
-    </data-item>
+    <div class="item-container" v-loading="loading">
+      <data-item :data="item" v-for="(item,index) in cardItems" :key="item.title" :isActiveItem="index == activeItemIndex" @changeActiveItem="changeActiveItem" :index="index">
+      </data-item>
+    </div>
     <div class="chart-container">
       <div class="chart-header">
-        <span>应用用户单聊折线图</span>
+        <span>{{chartTitle}}折线图</span>
         <div class="chart-date-picker">
           <div class="startTime">
             <span class="timeText">起始时间</span>
@@ -21,7 +23,7 @@
         </div>
       </div>
       <div class="chart-main">
-        <div class="chart-content" style="border: 1px solid #ccc"></div>
+        <div class="chart-content" style="border: 1px solid #ccc" v-loading="loading" element-loading-text="拼命加载中" element-loading-spinner="el-icon-loading" element-loading-background="rgba(222, 222, 222, 0.5)"></div>
       </div>
     </div>
   </div>
@@ -42,7 +44,16 @@ import DataItem from '@/components/DataItem'
 // import ItemData from '@/components/test/itemData.json'
 
 export default {
+  props: {
+    url: {
+      type: String,
+      default: '/screen/22', // 默认是单聊的数据
+    }
+  },
   computed: {
+    chartTitle() {
+      return Util.currentMsgMap.get(this.$route.path.slice(1))
+    },
     dateMonthBlank() {
       // 根据endDay  和 numOfDaysData 两个数据进行改变
       // 月份的数组
@@ -57,9 +68,9 @@ export default {
   },
   data() {
     return {
+      loading: true,
       cardItems: [], // 显示data-item 项目的
       activeItemIndex: null, // 默认选中的title
-
 
       monthData: [], // 处理之后的月数据
       pickerOptions: {
@@ -68,7 +79,7 @@ export default {
         }
       },
       // 默认是最近Config中配置的天数numOfDaysData的数据
-      startDateData: new Date(new Date() - 3600 * 1000 * 24 * Config.numOfDaysData).getTime(),
+      startDateData: new Date(new Date() - 3600 * 1000 * 24 * (this.$store.state.numOfDaysData - 1)).getTime(),
 
       // 图表配置项
       myChart: {},
@@ -76,22 +87,26 @@ export default {
       series: [],
 
       // 查看多少天的数据
-      numOfDaysData: Config.numOfDaysData,
+      numOfDaysData: this.$store.state.numOfDaysData,
 
       // 这里固定死  即把 时间选择器的后一个定死readonly
       endDay: Date.now(),
     }
   }, // end data
   watch: {
+    url(newValue) {
+      this.loading = true;
+      this._getNetData(newValue)
+    },
     // 监听起始时间的改变
     startDateData(newValue) {
       // console.log('时间改变', newValue)
       let numOfDaysData = parseInt((this.endDay - newValue) / Util.ONE_DAY) + 1;
       this.numOfDaysData = numOfDaysData;
-
+      this.$store.commit('changeNumOfDaysData', { numOfDaysData })
       // console.log('时间改变numOfDaysData', numOfDaysData)
-
-      this.$nextTick(()=> {
+      console.log('watch--------change')
+      this.$nextTick(() => {
         // 考虑dataMonthBlank numOfDaysData 上改变之后 进行操作
         this.refreshChat();
       })
@@ -107,6 +122,8 @@ export default {
 
     this.myChart = myChart;
     this._myinit(myChart)
+    // console.log('00000000000000000000000000000000')
+    // console.log(this.$store.state)
   },
   methods: {
     // 初始化
@@ -120,8 +137,9 @@ export default {
       this.$nextTick(() => {
         // 从路由对象上传递过来的
         console.log('------------------%c-------------', 'background:rgb(0,255,0)')
-        console.log(this.$route.query.url)
-        var url = this.$route.query.url;
+        // console.log(this.$route.query.url)
+        // var url = this.$route.query.url;
+        var url = this.url;
         this._getNetData(url)
       })
     },
@@ -175,7 +193,7 @@ export default {
       // alert(index)
       this.activeItemIndex = activeItemIndex;
       // console.log('the click item show', itemIndex)
-      this.$nextTick(()=> {
+      this.$nextTick(() => {
         // 控制确实在 this.activeItemIndex 改变之后
         this.refreshChat()
       })
@@ -230,8 +248,9 @@ export default {
         // console.log('dataItemShow'+labelName, monthData[count].data)
         cardItems.push({
           title: Util.currentMsgMap.get(labelName) || labelName,
-          data: monthData[count].data[monthData[count].data.length - 1],
-          dateTitle: '昨日',
+          data: monthData[count].data.slice(-2),
+          yestTitle: '昨日',
+          todTitle: '今日',
           isRise: false,
           rate: 0,
           isActive: false
@@ -254,6 +273,7 @@ export default {
       this.cardItems = cardItems;
       this.activeItemIndex = 0;
       // 所有的series数据都已经准备好了 开始装填数据
+      this.loading = false;
       console.log('加载数据')
       console.log('this.dateMonthBlank', this.dateMonthBlank)
       console.log('series:', series)
@@ -269,16 +289,6 @@ export default {
 
 </script>
 <style scoped>
-.single-chat .chart-date-picker {
-  display: inline-block;
-  position: absolute;
-  /*right: 150px;*/
-  width: 200px;
-}
 
-.startTime,
-.endTime {
-  display: inline-block;
-}
 
 </style>

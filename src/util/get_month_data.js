@@ -1,5 +1,5 @@
 // var data = require('./dailyData')
-
+const numFixed = 2;
 function getFive(timestamps) {
   var today = new Date(timestamps)
   var five = new Date(today.getFullYear(), today.getMonth(), today.getDate())
@@ -49,15 +49,17 @@ function dealAllItem(seriesItem) {
   // 第一个数据不是平均的8项   去data(0~startIndex) 的最大值
   // 截取data的前startIndex项  然后把其中的数据获取出来
   var res_data1 = getMaxOfArray(seriesItem.data.slice(0, startIndex + 1).map(item => item[1] ? item[1] : 0))
-  // console.log('Today Data: ' + res_data1)
-  thirtyData.push(res_data1)
+  // console.log('Today Data: ' + Object.prototype.toString.call(res_data1).slice(-8, -1))
+  thirtyData.push(res_data1.toFixed(numFixed))
 
   // 从第二个数据开始到最后可以保证平均
   // 3个小时一个点, 8个点里面肯定有第二天的时间  所以这里取8
   for (let i = startIndex + 1; i < seriesItem.data.length; i += 8) {
     // slice的 end如果大于data.length  则会end=data.length
     let aDayArr = seriesItem.data.slice(i, i + 8).map(item => item[1] ? item[1] : 0)
-    thirtyData.push(getMaxOfArray(aDayArr));
+    let maxValue = getMaxOfArray(aDayArr);
+    // console.log('Today Data: ' + Object.prototype.toString.call(maxValue).slice(-8, -1))
+    thirtyData.push(maxValue.toFixed(numFixed));
     // console.log(i)
   }
   // console.log('该条serieItem的一个月的数据')

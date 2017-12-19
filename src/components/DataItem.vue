@@ -6,9 +6,14 @@
       <!-- <span class="activeIcon" v-if="data.isActive"></span> -->
     </div>
     <div class="item-content">
-      <span class="dateTitle">{{data.dateTitle}}</span>
-      <span class="data">{{data.data | currency}}</span>
+      <!-- 昨日 -->
+      <span class="dateTitle">{{data.yestTitle}}</span>
+      <span class="data">{{data.data[0] | currency}}</span>
       <!-- <span class="rate" :class="{isRise: data.isRise}">{{data.rate}}</span> -->
+
+      <!-- 今日 -->
+      <span class="dateTitle ml">{{data.todTitle}}</span>
+      <span class="data">{{data.data[1] | currency}}</span>
     </div>
     <!--   {{data.title}}
     {{data.isActive}}
@@ -23,7 +28,7 @@ export default {
   props: {
     data: {
       type: Object,
-      default: null
+      default:null
     },
     isActiveItem: {
       type: Boolean,
@@ -112,6 +117,10 @@ export default {
 
 .item-content .rate.isRise {
   color: rgb(249, 176, 188);
+}
+
+.ml {
+  margin-left: 20px;
 }
 
 </style>
