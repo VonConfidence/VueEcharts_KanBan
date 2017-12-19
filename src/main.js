@@ -47,7 +47,7 @@ new Vue({
 
 router.push({
 
-  path: 'SingleChat'
+  path: 'CurrentMsgHeader'
   // query: {
   //   url: '/screen/22'
   // }

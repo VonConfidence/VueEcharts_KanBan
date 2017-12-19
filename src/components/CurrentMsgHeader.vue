@@ -10,22 +10,21 @@
     </nav>
     <div class="main">
       <!-- <router-view></router-view> -->
-      <SingleChat :url="url"></SingleChat>
+      <SingleChat :url="url" :chartTitle="chartTitle"></SingleChat>
     </div>
   </div>
 </template>
 <script>
 import Config from '@/config/config'
-
 import SingleChat from '@/components/CurrentPages/SingleChat'
-import GroupChat from '@/components/CurrentPages/GroupChat'
-import DiscuzChat from '@/components/CurrentPages/DiscuzChat'
+import * as Util from '@/util/util'
 
 export default {
   data() {
     return {
       tabValue: 'SingleChat', // 为0 表示 单聊  为1表示群聊, 为2表示讨论组
-      url: '/screen/22'
+      url: '/screen/22',
+      chartTitle: Util.currentMsgMap.get('SingleChat')
     }
   },
   watch: {
@@ -42,33 +41,31 @@ export default {
     clickChart(tabValue) {
       this.tabValue = tabValue;
 
-      // var path = '';
-      var query = {}
+      let chartTitle = '';
+      let query = {}
       switch (tabValue) {
         case 'SingleChat':
-          // path = 'SingleChat'
+          chartTitle = 'SingleChat'
           query.url = '/screen/22'
           break
         case 'GroupChat':
-          // path = 'GroupChat'
+          chartTitle = 'GroupChat'
           query.url = '/screen/23'
           break;
         case 'DiscuzChat':
-          // path = 'DiscuzChat'
+          chartTitle = 'DiscuzChat'
           query.url=  '/screen/24'
           break;
         default:
           break;
       } // end switch
-      // this.$router.push({ path, query })
       this.url = query.url;
+      this.chartTitle = Util.currentMsgMap.get(chartTitle);
     }
 
   },
   components: {
-    SingleChat,
-    GroupChat,
-    DiscuzChat,
+    SingleChat
   }
 }
 

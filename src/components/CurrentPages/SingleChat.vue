@@ -6,7 +6,7 @@
     </div>
     <div class="chart-container">
       <div class="chart-header">
-        <span>{{chartTitle}}折线图</span>
+        <span>{{chartTitle}} 折线图</span>
         <div class="chart-date-picker">
           <div class="startTime">
             <span class="timeText">起始时间</span>
@@ -48,12 +48,13 @@ export default {
     url: {
       type: String,
       default: '/screen/22', // 默认是单聊的数据
+    },
+    chartTitle: {
+      type: String,
+      default: ''
     }
   },
   computed: {
-    chartTitle() {
-      return Util.currentMsgMap.get(this.$route.path.slice(1))
-    },
     dateMonthBlank() {
       // 根据endDay  和 numOfDaysData 两个数据进行改变
       // 月份的数组
