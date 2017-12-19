@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import AveragePage from '@/components/AveragePage'
+import AveragePage from '@/components/AveragePages/AveragePage'
 
 import CurrentMsgHeader from '@/components/CurrentMsgHeader'
 
@@ -15,7 +15,7 @@ export default new Router({
       component: CurrentMsgHeader
     },
     {
-      path: '/average',
+      path: '/Average',
       name: 'AveragePage',
       component: AveragePage
     },

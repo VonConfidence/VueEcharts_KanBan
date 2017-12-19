@@ -45,10 +45,10 @@ new Vue({
   components: { App }
 })
 
-router.push({
+// router.push({
 
-  path: 'CurrentMsgHeader'
-  // query: {
-  //   url: '/screen/22'
-  // }
-})
+//   path: 'CurrentMsgHeader'
+//   // query: {
+//   //   url: '/screen/22'
+//   // }
+// })

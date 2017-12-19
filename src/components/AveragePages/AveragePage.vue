@@ -1,7 +1,10 @@
 <template>
-  <div class="home-page">
-    <data-item :data="item" v-for="(item,index) in items" :key="item.title" :isActiveItem="item.title == activeItemTitle" @changeActiveItem="changeActiveItem">
-    </data-item>
+  <div class="average-page">
+    <header class="header-title">折线图: 平均消息</header>
+    <div class="item-container" v-loading="loading">
+      <data-item :data="item" v-for="(item,index) in items" :key="item.title" :isActiveItem="item.title == activeItemTitle" @changeActiveItem="changeActiveItem(item.title)">
+      </data-item>
+    </div>
     <div class="chart-container">
       <div class="chart-header">
         <span>应用用户同时在线峰值</span>
@@ -12,7 +15,7 @@
         </div>
       </div>
       <div class="chart-main">
-        <div class="chart-content"></div>
+        <div class="chart-content" v-loading="loading" element-loading-text="拼命加载中" element-loading-spinner="el-icon-loading" element-loading-background="rgba(222, 222, 222, 0.5)"></div>
       </div>
     </div>
   </div>
@@ -20,13 +23,13 @@
 <script>
 import echarts from 'echarts'
 // 测试数据
-import TestData from '@/resources/lineDataMonth.json'
+// import TestData from '@/resources/lineDataMonth.json'
+// import ItemData from '@/components/test/itemData.json'
+
 import dealData_func from '@/util/get_month_data'
 import set_chart_data from '@/util/set_chart_data'
 
-// import ItemData from '@/components/test/itemData.json'
-
-import DataItem from '@/components/DataItem'
+import DataItem from '@/components/AveragePages/AverageItem'
 
 import Config from '@/config/config'
 import * as Util from '@/util/util'
@@ -36,42 +39,19 @@ import axios from 'axios'
 export default {
   data() {
     return {
+      // 加载中状态
+      loading: true,
+      // 选项卡
       items: [],
+      // 默认选中的title  控制样式
       activeItemTitle: null, // 默认选中
+      // 一个月的数据 处理后的  用来剪切
       monthData: [],
+      //datePicker 配置项
       pickerOptions: {
         disabledDate(time) {
           return time.getTime() >= Date.now() || time.getTime() <= Date.now() - 31 * 24 * 60 * 60 * 1000;
-        },
-        /*
-        shortcuts: [{
-          text: '最近一周',
-          onClick(picker) {
-            const end = new Date();
-            const start = new Date();
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-            picker.$emit('pick', [start, end]);
-          }
-        }, {
-          text: '最近一个月',
-          onClick(picker) {
-            const end = new Date();
-            const start = new Date();
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-            picker.$emit('pick', [start, end]);
-          }
-        },
-         {
-          text: '最近三个月',
-          onClick(picker) {
-            const end = new Date();
-            const start = new Date();
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-            picker.$emit('pick', [start, end]);
-          }
         }
-        ]
-        */
       },
       // 默认是最近Config中配置的天数numOfDaysData的数据
       selectedDateRange: [new Date(new Date().setTime(new Date().getTime() - 3600 * 1000 * 24 * (Config.numOfDaysData - 1))), new Date()],
@@ -79,9 +59,13 @@ export default {
       // 图表配置项
       myChart: {},
 
+      // 图标上显示
       series: [],
+
+      // 显示多少天的数据
       numOfDaysData: Config.numOfDaysData,
 
+      // 日期的结束时间  会根据选择时间修改  默认当前
       endDay: Date.now(),
 
     }
@@ -90,6 +74,7 @@ export default {
     DataItem
   }, // end components
   watch: {
+    // 用户选择的时间发生改变的时候
     selectedDateRange(newValue, oldValue) {
       let now = new Date()
       let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -102,58 +87,61 @@ export default {
 
       let series = [];
 
-      if (!this.activeItemTitle) { // 表示是在没有选中单个的标识符下 点击日期选项  即全部显示
+      // 实际上这里没有用到 数据项目的差距太多 不用全部显示
+      // if (!this.activeItemTitle) {
+      //   // 表示是在没有选中单个的标识符下 点击日期选项  即全部显示
+      //   console.log('显示所有的数据--------------')
+      //   this.endDay = newValue[1];
+      //   this.numOfDaysData = startCount - endCount + 1;
 
-        this.endDay = newValue[1];
-        this.numOfDaysData = startCount - endCount + 1;
+      //   for (let count = 0; count < monthData.length; count++) {
+      //     let labelName = monthData[count].lineName;
+      //     let dataItemShow;
+      //     if (endCount == 0) {
+      //       dataItemShow = monthData[count].data.slice(-startCount - 1)
+      //     } else {
+      //       dataItemShow = monthData[count].data.slice(-startCount - 1, -endCount);
+      //     }
+      //     series.push({
+      //       name: Util.msgReflect.get(labelName) || labelName,
+      //       // name:labelName,
+      //       type: 'line',
+      //       smooth: false,
+      //       data: dataItemShow
+      //     })
+      //   }
 
-        for (let count = 0; count < monthData.length; count++) {
-          let labelName = monthData[count].lineName;
-          let dataItemShow;
-          if (endCount == 0) {
-            dataItemShow = monthData[count].data.slice(-startCount - 1)
-          } else {
-            dataItemShow = monthData[count].data.slice(-startCount - 1, -endCount);
-          }
-          series.push({
-            name: Util.msgReflect.get(labelName) || labelName,
-            // name:labelName,
-            type: 'line',
-            smooth: false,
-            data: dataItemShow
-          })
-        }
+      //   this.series = series;
+      //   // console.log(series)
+      //   set_chart_data(this.myChart, this.dateMonthBlank, series)
+      //   return ;
+      // }
 
-        this.series = series;
-        // console.log(series)
-        set_chart_data(this.myChart, this.dateMonthBlank, series)
+      // 选中单根线条的情况下实现
+      // alert('单线条情况下的时间选择')
+      this.endDay = newValue[1];
+      this.numOfDaysData = startCount - endCount + 1;
+
+      let activeItemIndex = this.items.findIndex(itm => itm.title == this.activeItemTitle)
+      console.log('this.series: in singeLine ', this.series[activeItemIndex])
+      // this.showOneItem(this.series[activeItemIndex])
+      let labelName = monthData[activeItemIndex].lineName;
+      let dataItemShow;
+      if (endCount == 0) {
+        dataItemShow = monthData[activeItemIndex].data.slice(-startCount - 1)
       } else {
-        // 选中单根线条的情况下实现
-        // alert('单线条情况下的时间选择')
-        this.endDay = newValue[1];
-        this.numOfDaysData = startCount - endCount + 1;
-
-        let activeItemIndex = this.items.findIndex(itm => itm.title == this.activeItemTitle)
-        console.log('this.series: in singeLine ', this.series[activeItemIndex])
-        // this.showOneItem(this.series[activeItemIndex])
-        let labelName = monthData[activeItemIndex].lineName;
-        let dataItemShow;
-        if (endCount == 0) {
-          dataItemShow = monthData[activeItemIndex].data.slice(-startCount - 1)
-        } else {
-          dataItemShow = monthData[activeItemIndex].data.slice(-startCount - 1, -endCount);
-        }
-        series.push({
-          name: Util.msgReflect.get(labelName) || labelName,
-          type: 'line',
-          smooth: false,
-          data: dataItemShow
-        })
-        this.series = series;
-        // console.log('this.dateMonthBlank, series')
-        // console.log(this.dateMonthBlank, series)
-        set_chart_data(this.myChart, this.dateMonthBlank, series)
-      } // end else
+        dataItemShow = monthData[activeItemIndex].data.slice(-startCount - 1, -endCount);
+      }
+      series.push({
+        name: Util.msgReflect.get(labelName) || labelName,
+        type: 'line',
+        smooth: false,
+        data: dataItemShow
+      })
+      this.series = series;
+      // console.log('this.dateMonthBlank, series')
+      // console.log(this.dateMonthBlank, series)
+      set_chart_data(this.myChart, this.dateMonthBlank, series)
 
     }, // end selectedDateRange
 
@@ -210,10 +198,10 @@ export default {
       let series = [];
       // console.log(this.selectedDateRange)
       let now = new Date()
-      let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      let today = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
       let endCount = parseInt((today - this.selectedDateRange[1]) / Util.ONE_DAY)
       let startCount = parseInt((today - this.selectedDateRange[0]) / Util.ONE_DAY)
-
+      // console.log('=------------', startCount, endCount)
       series.push({
         name: Util.msgReflect.get(serie.lineName) || serie.lineName,
         // name:labelName,
@@ -228,7 +216,7 @@ export default {
     // 数据表象数据修改
     showOneItem(item) {
       //alert(item.name)
-      console.log('the click item show: ', item)
+      console.log('the click one item show: ', item)
       this.myChart.clear()
       // item 是series中的一个对象
       set_chart_data(this.myChart, this.dateMonthBlank, [item])
@@ -292,12 +280,15 @@ export default {
       this.endDay = endDay;
 
       this.items = items;
+      // 默认第一项选中
+      this.activeItemTitle = items[0].title;
+
       // 所有的series数据都已经准备好了 开始装填数据
       console.log('series:', series)
       // console.log('labelNames:', labelNames)
-
-      set_chart_data(this.myChart, this.dateMonthBlank, series)
-
+      this.loading = false;
+      // 默认显示 第一个项目
+      set_chart_data(this.myChart, this.dateMonthBlank, series[0])
     },
 
     _myinit(myChart) {
@@ -324,39 +315,16 @@ export default {
 
 </script>
 <style scoped>
-/*
-.home-page {}
-
-.chart-container {
+.header-title {
   text-align: left;
-  position: relative;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.chart-container .chart-header {
-  height: 50px;
-  line-height: 50px;
-  padding-left: 50px;
-  background: rgb(241, 245, 248);
-}
-
-.chart-container .chart-date-picker {
-  display: inline-block;
-  position: absolute;
-  right: 50px;
-}
-
-.chart-container .chart-date-picker .demonstration {
-  padding-right: 10px;
-}
-
-.chart-container .chart-main {
-  width: 100%;
-}
-
-.chart-container .chart-main .chart-content {
-  border: 1px solid #666;
-  height: 400px;
+.item-container {
   margin-top: 10px;
-}*/
+  min-height: 300px;
+  text-align: left;
+}
 
 </style>
