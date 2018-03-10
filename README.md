@@ -19,3 +19,7 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## 主路由
+1. http://localhost:8080/CurrentMsgHeader 查看当前消息
+2. http://localhost:8080/Average 查看平均消息

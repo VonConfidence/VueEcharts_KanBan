@@ -23,14 +23,14 @@ export default {
   data() {
     return {
       tabValue: 'SingleChat', // 为0 表示 单聊  为1表示群聊, 为2表示讨论组
-      url: '/screen/22',
+      url: 'screen/22',
       chartTitle: Util.currentMsgMap.get('SingleChat')
     }
   },
-  watch: {
-    // 如果路由有变化，会再次执行该方法
-    '$route': 'routeChange'
-  },
+  // watch: {
+  //   // 如果路由有变化，会再次执行该方法
+  //   '$route': 'routeChange'
+  // },
   methods: {
     // routeChange() {
     //   var path = this.$route.path;
@@ -46,15 +46,15 @@ export default {
       switch (tabValue) {
         case 'SingleChat':
           chartTitle = 'SingleChat'
-          query.url = '/screen/22'
+          query.url = 'screen/22'
           break
         case 'GroupChat':
           chartTitle = 'GroupChat'
-          query.url = '/screen/23'
+          query.url = 'screen/23'
           break;
         case 'DiscuzChat':
           chartTitle = 'DiscuzChat'
-          query.url=  '/screen/24'
+          query.url=  'screen/24'
           break;
         default:
           break;

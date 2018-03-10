@@ -47,7 +47,7 @@ export default {
   props: {
     url: {
       type: String,
-      default: '/screen/22', // 默认是单聊的数据
+      default: 'screen/22', // 默认是单聊的数据
     },
     chartTitle: {
       type: String,
@@ -150,7 +150,7 @@ export default {
       console.log('_getNetData -------------------')
       Util.getIds(url).then(ids => {
         let id = ids[0];
-        axios.get('/chart/k', {
+        axios.get('chart/k', {
           params: {
             id,
             cf: '',

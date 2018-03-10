@@ -1,0 +1,50 @@
+[
+{
+  "value": 6000,
+  "name": "Filesystems",
+  "path": "Filesystems",
+  "children": [
+    {
+      "value": 1500,
+      "name": "test1",
+      "path": "Filesystems/test1",
+      "children": [
+      {
+        "value": 1500,
+        "name": "Contents",
+        "path": "Filesystems/test1/Contents"
+      }]
+    },
+
+    {
+      "value": 1500,
+      "name": "test2",
+      "path": "Filesystems/test2",
+      "children": [
+      {
+        "value": 500,
+        "name": "Contents",
+        "path": "Filesystems/test2/Contents"
+      },
+      {
+        "value": 1000,
+        "name": "Support",
+        "path": "Filesystems/test2/Support"
+      }]
+    },
+
+    {
+      "value": 1500,
+      "name": "test3",
+      "path": "Filesystems/test3",
+      "children": [
+      {
+        "value": 1500,
+        "name": "afpfs.kext",
+        "path": "Filesystems/test3/afpfs.kext"
+      }]
+    }
+
+  ]
+
+}]

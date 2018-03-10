@@ -161,9 +161,9 @@ export default {
   }, // end computed
   methods: {
     _getNetData() {
-      Util.getIds('/screen/12').then(ids => {
+      Util.getIds('screen/12').then(ids => {
         let id = ids[0];
-        axios.get('/chart/k', {
+        axios.get('chart/k', {
           params: {
             id,
             cf: '',

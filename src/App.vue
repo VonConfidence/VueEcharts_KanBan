@@ -1,15 +1,26 @@
 <template>
   <div id="app">
+    <!-- 123 -->
     <router-view/>
   </div>
 </template>
-
 <script>
 export default {
-  name: 'app'
-}
-</script>
+  name: 'app',
+  data() {
+    return {
 
+    }
+  },
+  mounted() {
+    // this.$router.push({name: 'NavMenu'})
+  },
+  methods: {
+
+  }
+}
+
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -17,7 +28,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-/*  margin-top: 60px;*/
+  /*  margin-top: 60px;*/
 }
 
 .chart-container {
@@ -43,13 +54,14 @@ export default {
   padding-right: 10px;
 }
 
-.chart-container .chart-main {
+.chart-main {
   width: 100%;
 }
 
-.chart-container .chart-main .chart-content {
+.chart-main .chart-content {
   /*border: 1px solid #666;*/
   height: 400px;
   margin-top: 10px;
 }
+
 </style>

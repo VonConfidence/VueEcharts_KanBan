@@ -8,6 +8,13 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Config from '@/config/config'
+import axios from 'axios'
+
+// axios.defaults.withCredentials = true;
+axios.defaults.baseURL = Config.baseURL;
+// liteapp.mrpyq.com:808
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -46,9 +53,5 @@ new Vue({
 })
 
 // router.push({
-
-//   path: 'CurrentMsgHeader'
-//   // query: {
-//   //   url: '/screen/22'
-//   // }
+//   path: 'NavMenu'
 // })

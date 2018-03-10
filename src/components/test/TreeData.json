@@ -1,0 +1,638 @@
+{
+    "first": {
+        "1002": [
+            {
+                "idofaccountcaption": 366,
+                "accountcaptioncode": "1002",
+                "accountcaptionname": "银行存款",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "5599664",
+                "periodcreditamount": "4974509.78",
+                "debitcumulative": "5599664",
+                "creditcumulative": "4974509.78",
+                "endperioddebittotal": "766274.22",
+                "endperiodcredittotal": "141120"
+            }
+        ],
+        "6001": [
+            {
+                "idofaccountcaption": 367,
+                "accountcaptioncode": "6001",
+                "accountcaptionname": "主营业务收入",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "0",
+                "periodcreditamount": "5599664",
+                "debitcumulative": "0",
+                "creditcumulative": "5599664",
+                "endperioddebittotal": "0",
+                "endperiodcredittotal": "5599664"
+            }
+        ],
+        "6401": [
+            {
+                "idofaccountcaption": 368,
+                "accountcaptioncode": "6401",
+                "accountcaptionname": "主营业务成本",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "4974509.78",
+                "periodcreditamount": "0",
+                "debitcumulative": "4974509.78",
+                "creditcumulative": "0",
+                "endperioddebittotal": "4974509.78",
+                "endperiodcredittotal": "0"
+            }
+        ]
+    },
+    "second": {
+        "6401.10": [
+            {
+                "idofaccountcaption": 393,
+                "accountcaptioncode": "6401.10",
+                "accountcaptionname": "技术服务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "652600",
+                "periodcreditamount": "0",
+                "debitcumulative": "652600",
+                "creditcumulative": "0",
+                "endperioddebittotal": "652600",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.07": [
+            {
+                "idofaccountcaption": 380,
+                "accountcaptioncode": "6401.07",
+                "accountcaptionname": "劳务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "1128503.4",
+                "periodcreditamount": "0",
+                "debitcumulative": "1128503.4",
+                "creditcumulative": "0",
+                "endperioddebittotal": "1128503.4",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.09": [
+            {
+                "idofaccountcaption": 392,
+                "accountcaptioncode": "6401.09",
+                "accountcaptionname": "交通费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "14640",
+                "periodcreditamount": "0",
+                "debitcumulative": "14640",
+                "creditcumulative": "0",
+                "endperioddebittotal": "14640",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.08": [
+            {
+                "idofaccountcaption": 383,
+                "accountcaptioncode": "6401.08",
+                "accountcaptionname": "耗材费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "190089.96",
+                "periodcreditamount": "0",
+                "debitcumulative": "190089.96",
+                "creditcumulative": "0",
+                "endperioddebittotal": "190089.96",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.04": [
+            {
+                "idofaccountcaption": 372,
+                "accountcaptioncode": "6401.04",
+                "accountcaptionname": "科室劳务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "409164",
+                "periodcreditamount": "0",
+                "debitcumulative": "409164",
+                "creditcumulative": "0",
+                "endperioddebittotal": "409164",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.01": [
+            {
+                "idofaccountcaption": 369,
+                "accountcaptioncode": "6401.01",
+                "accountcaptionname": "医院管理费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "650000",
+                "periodcreditamount": "0",
+                "debitcumulative": "650000",
+                "creditcumulative": "0",
+                "endperioddebittotal": "650000",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.11": [
+            {
+                "idofaccountcaption": 397,
+                "accountcaptioncode": "6401.11",
+                "accountcaptionname": "税费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "123634.42",
+                "periodcreditamount": "0",
+                "debitcumulative": "123634.42",
+                "creditcumulative": "0",
+                "endperioddebittotal": "123634.42",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.02": [
+            {
+                "idofaccountcaption": 370,
+                "accountcaptioncode": "6401.02",
+                "accountcaptionname": "机构管理费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "524462",
+                "periodcreditamount": "0",
+                "debitcumulative": "524462",
+                "creditcumulative": "0",
+                "endperioddebittotal": "524462",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.03": [
+            {
+                "idofaccountcaption": 371,
+                "accountcaptioncode": "6401.03",
+                "accountcaptionname": "科室发展基金",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "165430",
+                "periodcreditamount": "0",
+                "debitcumulative": "165430",
+                "creditcumulative": "0",
+                "endperioddebittotal": "165430",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.05": [
+            {
+                "idofaccountcaption": 373,
+                "accountcaptioncode": "6401.05",
+                "accountcaptionname": "受试者费用",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "804460.4",
+                "periodcreditamount": "0",
+                "debitcumulative": "804460.4",
+                "creditcumulative": "0",
+                "endperioddebittotal": "804460.4",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.06": [
+            {
+                "idofaccountcaption": 377,
+                "accountcaptioncode": "6401.06",
+                "accountcaptionname": "餐费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "311525.6",
+                "periodcreditamount": "0",
+                "debitcumulative": "311525.6",
+                "creditcumulative": "0",
+                "endperioddebittotal": "311525.6",
+                "endperiodcredittotal": "0"
+            }
+        ]
+    },
+    "third": {
+        "6401.08.02": [
+            {
+                "idofaccountcaption": 385,
+                "accountcaptioncode": "6401.08.02",
+                "accountcaptionname": "吸管",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "5600",
+                "periodcreditamount": "0",
+                "debitcumulative": "5600",
+                "creditcumulative": "0",
+                "endperioddebittotal": "5600",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.04.01": [
+            {
+                "idofaccountcaption": 402,
+                "accountcaptioncode": "6401.04.01",
+                "accountcaptionname": "项目CRC服务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "259164",
+                "periodcreditamount": "0",
+                "debitcumulative": "259164",
+                "creditcumulative": "0",
+                "endperioddebittotal": "259164",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.05.03": [
+            {
+                "idofaccountcaption": 375,
+                "accountcaptioncode": "6401.05.03",
+                "accountcaptionname": "受试者日用品",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "37080",
+                "periodcreditamount": "0",
+                "debitcumulative": "37080",
+                "creditcumulative": "0",
+                "endperioddebittotal": "37080",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.08.03": [
+            {
+                "idofaccountcaption": 386,
+                "accountcaptioncode": "6401.08.03",
+                "accountcaptionname": "高脂餐原料",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "3416.8",
+                "periodcreditamount": "0",
+                "debitcumulative": "3416.8",
+                "creditcumulative": "0",
+                "endperioddebittotal": "3416.8",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.06.03": [
+            {
+                "idofaccountcaption": 404,
+                "accountcaptioncode": "6401.06.03",
+                "accountcaptionname": "受试者补贴",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "80740",
+                "periodcreditamount": "0",
+                "debitcumulative": "80740",
+                "creditcumulative": "0",
+                "endperioddebittotal": "80740",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.06.02": [
+            {
+                "idofaccountcaption": 379,
+                "accountcaptioncode": "6401.06.02",
+                "accountcaptionname": "会议餐费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "3600",
+                "periodcreditamount": "0",
+                "debitcumulative": "3600",
+                "creditcumulative": "0",
+                "endperioddebittotal": "3600",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.08.08": [
+            {
+                "idofaccountcaption": 391,
+                "accountcaptioncode": "6401.08.08",
+                "accountcaptionname": "科研用药",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "39.16",
+                "periodcreditamount": "0",
+                "debitcumulative": "39.16",
+                "creditcumulative": "0",
+                "endperioddebittotal": "39.16",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.06.04": [
+            {
+                "idofaccountcaption": 405,
+                "accountcaptioncode": "6401.06.04",
+                "accountcaptionname": "受试者查验费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "98243.6",
+                "periodcreditamount": "0",
+                "debitcumulative": "98243.6",
+                "creditcumulative": "0",
+                "endperioddebittotal": "98243.6",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.03.01": [
+            {
+                "idofaccountcaption": 400,
+                "accountcaptioncode": "6401.03.01",
+                "accountcaptionname": "受试者补贴",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "14170",
+                "periodcreditamount": "0",
+                "debitcumulative": "14170",
+                "creditcumulative": "0",
+                "endperioddebittotal": "14170",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.07.01": [
+            {
+                "idofaccountcaption": 381,
+                "accountcaptioncode": "6401.07.01",
+                "accountcaptionname": "后勤辅助部门劳务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "246853.4",
+                "periodcreditamount": "0",
+                "debitcumulative": "246853.4",
+                "creditcumulative": "0",
+                "endperioddebittotal": "246853.4",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.02.04": [
+            {
+                "idofaccountcaption": 408,
+                "accountcaptioncode": "6401.02.04",
+                "accountcaptionname": "受试者查验费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "73422",
+                "periodcreditamount": "0",
+                "debitcumulative": "73422",
+                "creditcumulative": "0",
+                "endperioddebittotal": "73422",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.06.01": [
+            {
+                "idofaccountcaption": 378,
+                "accountcaptioncode": "6401.06.01",
+                "accountcaptionname": "工作人员餐费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "128942",
+                "periodcreditamount": "0",
+                "debitcumulative": "128942",
+                "creditcumulative": "0",
+                "endperioddebittotal": "128942",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.05.04": [
+            {
+                "idofaccountcaption": 376,
+                "accountcaptioncode": "6401.05.04",
+                "accountcaptionname": "受试者伙食费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "41100",
+                "periodcreditamount": "0",
+                "debitcumulative": "41100",
+                "creditcumulative": "0",
+                "endperioddebittotal": "41100",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.08.05": [
+            {
+                "idofaccountcaption": 388,
+                "accountcaptioncode": "6401.08.05",
+                "accountcaptionname": "带顶盖标签",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "14000",
+                "periodcreditamount": "0",
+                "debitcumulative": "14000",
+                "creditcumulative": "0",
+                "endperioddebittotal": "14000",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.10.03": [
+            {
+                "idofaccountcaption": 396,
+                "accountcaptioncode": "6401.10.03",
+                "accountcaptionname": "项目CRC服务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "399600",
+                "periodcreditamount": "0",
+                "debitcumulative": "399600",
+                "creditcumulative": "0",
+                "endperioddebittotal": "399600",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.05.01": [
+            {
+                "idofaccountcaption": 374,
+                "accountcaptioncode": "6401.05.01",
+                "accountcaptionname": "受试者补贴",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "663880.4",
+                "periodcreditamount": "0",
+                "debitcumulative": "663880.4",
+                "creditcumulative": "0",
+                "endperioddebittotal": "663880.4",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.10.01": [
+            {
+                "idofaccountcaption": 394,
+                "accountcaptioncode": "6401.10.01",
+                "accountcaptionname": "统计分析费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "100000",
+                "periodcreditamount": "0",
+                "debitcumulative": "100000",
+                "creditcumulative": "0",
+                "endperioddebittotal": "100000",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.10.02": [
+            {
+                "idofaccountcaption": 395,
+                "accountcaptioncode": "6401.10.02",
+                "accountcaptionname": "招募费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "153000",
+                "periodcreditamount": "0",
+                "debitcumulative": "153000",
+                "creditcumulative": "0",
+                "endperioddebittotal": "153000",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.08.04": [
+            {
+                "idofaccountcaption": 387,
+                "accountcaptioncode": "6401.08.04",
+                "accountcaptionname": "氯化钠溶液",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "8208",
+                "periodcreditamount": "0",
+                "debitcumulative": "8208",
+                "creditcumulative": "0",
+                "endperioddebittotal": "8208",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.05.02": [
+            {
+                "idofaccountcaption": 409,
+                "accountcaptioncode": "6401.05.02",
+                "accountcaptionname": "项目CRC服务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "62400",
+                "periodcreditamount": "0",
+                "debitcumulative": "62400",
+                "creditcumulative": "0",
+                "endperioddebittotal": "62400",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.08.01": [
+            {
+                "idofaccountcaption": 384,
+                "accountcaptioncode": "6401.08.01",
+                "accountcaptionname": "冻存管",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "144800",
+                "periodcreditamount": "0",
+                "debitcumulative": "144800",
+                "creditcumulative": "0",
+                "endperioddebittotal": "144800",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.02.03": [
+            {
+                "idofaccountcaption": 407,
+                "accountcaptioncode": "6401.02.03",
+                "accountcaptionname": "受试者伙食费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "7660",
+                "periodcreditamount": "0",
+                "debitcumulative": "7660",
+                "creditcumulative": "0",
+                "endperioddebittotal": "7660",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.02.02": [
+            {
+                "idofaccountcaption": 399,
+                "accountcaptioncode": "6401.02.02",
+                "accountcaptionname": "后勤辅助部门劳务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "138780",
+                "periodcreditamount": "0",
+                "debitcumulative": "138780",
+                "creditcumulative": "0",
+                "endperioddebittotal": "138780",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.08.06": [
+            {
+                "idofaccountcaption": 389,
+                "accountcaptioncode": "6401.08.06",
+                "accountcaptionname": "打印色带",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "3040",
+                "periodcreditamount": "0",
+                "debitcumulative": "3040",
+                "creditcumulative": "0",
+                "endperioddebittotal": "3040",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.07.02": [
+            {
+                "idofaccountcaption": 382,
+                "accountcaptioncode": "6401.07.02",
+                "accountcaptionname": "研究团队劳务费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "881650",
+                "periodcreditamount": "0",
+                "debitcumulative": "881650",
+                "creditcumulative": "0",
+                "endperioddebittotal": "881650",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.08.07": [
+            {
+                "idofaccountcaption": 390,
+                "accountcaptioncode": "6401.08.07",
+                "accountcaptionname": "冻存盒",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "6000",
+                "periodcreditamount": "0",
+                "debitcumulative": "6000",
+                "creditcumulative": "0",
+                "endperioddebittotal": "6000",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.02.01": [
+            {
+                "idofaccountcaption": 406,
+                "accountcaptioncode": "6401.02.01",
+                "accountcaptionname": "受试者交通费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "4600",
+                "periodcreditamount": "0",
+                "debitcumulative": "4600",
+                "creditcumulative": "0",
+                "endperioddebittotal": "4600",
+                "endperiodcredittotal": "0"
+            }
+        ],
+        "6401.03.02": [
+            {
+                "idofaccountcaption": 401,
+                "accountcaptioncode": "6401.03.02",
+                "accountcaptionname": "受试者伙食费",
+                "startperioddebitover": "0",
+                "startperiodcreditover": "0",
+                "perioddebitamount": "1260",
+                "periodcreditamount": "0",
+                "debitcumulative": "1260",
+                "creditcumulative": "0",
+                "endperioddebittotal": "1260",
+                "endperiodcredittotal": "0"
+            }
+        ]
+    }
+}

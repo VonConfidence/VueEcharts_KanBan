@@ -11,30 +11,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/screen/10': {
-        target: 'http://liteapp.mrpyq.com:8084'
-      },
-      '/screen/12': {
-        target: 'http://liteapp.mrpyq.com:8084'
-      },
-      '/chart/k': {
-        target: 'http://liteapp.mrpyq.com:8084/'
-      },
-      '/screen/11': {
-        target: 'http://liteapp.mrpyq.com:8084'
-      },
-      '/screen/13': {
-        target: 'http://liteapp.mrpyq.com:8084'
-      },
-      '/screen/22': {
-        target: 'http://liteapp.mrpyq.com:8084'
-      },
-      '/screen/23': {
-        target: 'http://liteapp.mrpyq.com:8084'
-      },
-      '/screen/24': {
-        target: 'http://liteapp.mrpyq.com:8084'
-      },
     },
 
     // Various Dev Server settings
